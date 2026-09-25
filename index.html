@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Favorite Human ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FLOATING STICKERS -->
+    <div class="sticker s1">💗</div>
+    <div class="sticker s2">🎀</div>
+    <div class="sticker s3">🧸</div>
+    <div class="sticker s4">🌷</div>
+    <div class="sticker s5">✨</div>
+    <div class="sticker s6">💌</div>
+
+    <!-- MUSIC -->
+    <audio id="music" loop>
+        <source src="music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" id="musicBtn">
+        🎵 <span>play our song</span>
+    </button>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="tiny">a little website for my favorite person ♡</div>
+
+        <h1>
+            hey,<br>
+            <span>bestie.</span>
+        </h1>
+
+        <p class="hero-text">
+            I made you a tiny corner of the internet
+            because apparently a normal message wasn't enough. 🎀
+        </p>
+
+        <button class="start-btn" onclick="scrollToMemories()">
+            come here, idiot ♡
+        </button>
+
+        <div class="scroll">↓ scroll slowly ↓</div>
+
+    </section>
+
+
+    <!-- LITTLE MESSAGE -->
+    <section class="letter-section">
+
+        <div class="letter-card">
+
+            <div class="tape"></div>
+
+            <p class="small-title">a tiny confession</p>
+
+            <h2>
+                life is just a little<br>
+                <i>better</i> with you.
+            </h2>
+
+            <p>
+                You're one of those people who somehow turned
+                ordinary days into memories I actually want to keep.
+            </p>
+
+            <div class="signature">
+                forever annoying you,<br>
+                <span>♡ me</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERACTIVE CARDS -->
+    <section class="reasons" id="memories">
+
+        <p class="section-mini">things i secretly love about us</p>
+
+        <h2 class="section-title">
+            our little <span>world</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="reason-card" onclick="openCard(this)">
+                <span class="number">01</span>
+                <div class="emoji">🧸</div>
+                <h3>the comfort</h3>
+                <p>Tap me ♡</p>
+
+                <div class="hidden-message">
+                    Somehow I can be completely myself around you.
+                    Even my weirdest version. Unfortunately, you've seen everything. 😭
+                </div>
+            </div>
+
+
+            <div class="reason-card" onclick="openCard(this)">
+                <span class="number">02</span>
+                <div class="emoji">😂</div>
+                <h3>the laughs</h3>
+                <p>Tap me ♡</p>
+
+                <div class="hidden-message">
+                    Half of our conversations make absolutely no sense.
+                    And honestly? I wouldn't change that.
+                </div>
+            </div>
+
+
+            <div class="reason-card" onclick="openCard(this)">
+                <span class="number">03</span>
+                <div class="emoji">🎀</div>
+                <h3>the chaos</h3>
+                <p>Tap me ♡</p>
+
+                <div class="hidden-message">
+                    Somehow every random moment becomes a story.
+                    We're actually a little ridiculous. 🤏🏻
+                </div>
+            </div>
+
+
+            <div class="reason-card" onclick="openCard(this)">
+                <span class="number">04</span>
+                <div class="emoji">💌</div>
+                <h3>the memories</h3>
+                <p>Tap me ♡</p>
+
+                <div class="hidden-message">
+                    There are so many tiny moments that I never want
+                    to forget. This website is basically proof. 🥹
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO SECTION -->
+    <section class="photos-section">
+
+        <p class="section-mini">evidence that we are actually cute</p>
+
+        <h2 class="section-title">
+            12 little <span>memories</span>
+        </h2>
+
+        <p class="photo-subtitle">
+            Tap any picture. Yes, even the embarrassing ones. 😭
+        </p>
+
+
+        <div class="photo-grid">
+
+            <div class="photo-card">
+                <img src="images/photo1.jpeg" alt="Memory 1" onclick="openPhoto(this)">
+                <div class="caption">one of my favourites ♡</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo2.jpeg" alt="Memory 2" onclick="openPhoto(this)">
+                <div class="caption">look at us 😭</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo3.jpeg" alt="Memory 3" onclick="openPhoto(this)">
+                <div class="caption">little moment 🌷</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo4.jpeg" alt="Memory 4" onclick="openPhoto(this)">
+                <div class="caption">♡ forever saving this</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo5.jpeg" alt="Memory 5" onclick="openPhoto(this)">
+                <div class="caption">the memories >>>></div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo6.jpeg" alt="Memory 6" onclick="openPhoto(this)">
+                <div class="caption">just us being us</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo7.jpeg" alt="Memory 7" onclick="openPhoto(this)">
+                <div class="caption">this one ♡</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo8.jpeg" alt="Memory 8" onclick="openPhoto(this)">
+                <div class="caption">so many memories</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo9.jpeg" alt="Memory 9" onclick="openPhoto(this)">
+                <div class="caption">another little moment ♡</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo10.jpeg" alt="Memory 10" onclick="openPhoto(this)">
+                <div class="caption">keeping this forever</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo11.jpeg" alt="Memory 11" onclick="openPhoto(this)">
+                <div class="caption">my favourite idiot 🎀</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo12.jpeg" alt="Memory 12" onclick="openPhoto(this)">
+                <div class="caption">one more for the collection ♡</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+    <section class="final-section">
+
+        <div class="heart">♡</div>
+
+        <p class="section-mini">and finally...</p>
+
+        <h2>
+            you're stuck<br>
+            <span>with me.</span>
+        </h2>
+
+        <p class="final-text">
+            No matter how much we annoy each other,
+            laugh at stupid things, disappear for hours,
+            or randomly start talking nonsense...
+            I'm really glad it's you. 💗
+        </p>
+
+        <div class="final-sticker">
+            🧸 🎀 💌
+        </div>
+
+        <p class="tiny-final">
+            made with way too much love ♡
+        </p>
+
+    </section>
+
+
+    <!-- CARD POPUP -->
+    <div class="modal" id="cardModal">
+
+        <div class="modal-box">
+
+            <button class="close" onclick="closeCard()">×</button>
+
+            <div id="modalEmoji"></div>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalText"></p>
+
+            <div class="modal-heart">♡</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHOTO POPUP -->
+    <div class="photo-modal" id="photoModal" onclick="closePhoto()">
+
+        <button class="photo-close">×</button>
+
+        <img id="bigPhoto" src="" alt="">
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
