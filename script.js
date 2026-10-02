@@ -1,176 +1,302 @@
-/* ---------------- MUSIC ---------------- */
+/* =========================
+   MUSIC
+========================= */
 
-const music = document.getElementById("music");
+const song = document.getElementById("song");
 const musicBtn = document.getElementById("musicBtn");
 
-let playing = false;
+let musicPlaying = false;
 
-musicBtn.addEventListener("click", function () {
+musicBtn.addEventListener("click", async () => {
 
-    if (!playing) {
+    if (!musicPlaying) {
 
-        music.play();
+        try {
+            await song.play();
 
-        musicBtn.innerHTML = "🎶 <span>our song is playing</span>";
+            musicPlaying = true;
 
-        playing = true;
+            musicBtn.innerHTML = "⏸️ Pause Our Song";
+
+        } catch (error) {
+
+            alert("Tap the button again to start the song 🎵");
+
+        }
 
     } else {
 
-        music.pause();
+        song.pause();
 
-        musicBtn.innerHTML = "🎵 <span>play our song</span>";
+        musicPlaying = false;
 
-        playing = false;
+        musicBtn.innerHTML = "🎵 Play Our Song";
     }
-
 });
 
 
-/* ---------------- SCROLL ---------------- */
+/* =========================
+   SCROLL
+========================= */
 
-function scrollToMemories() {
+function scrollToSection(id) {
 
-    document.getElementById("memories").scrollIntoView({
+    document.getElementById(id).scrollIntoView({
         behavior: "smooth"
     });
 
 }
 
 
-/* ---------------- CARD POPUP ---------------- */
+/* =========================
+   LOVE MESSAGE
+========================= */
 
-const cardModal = document.getElementById("cardModal");
+function showMessage(message) {
 
-const modalTitle = document.getElementById("modalTitle");
+    const box = document.getElementById("messageBox");
 
-const modalText = document.getElementById("modalText");
+    box.innerHTML = message;
 
-const modalEmoji = document.getElementById("modalEmoji");
+    box.style.transform = "scale(1.03)";
 
-
-function openCard(card) {
-
-    const title = card.querySelector("h3").innerText;
-
-    const emoji = card.querySelector(".emoji").innerText;
-
-    const message = card.querySelector(".hidden-message").innerText;
-
-
-    modalTitle.innerText = title;
-
-    modalEmoji.innerText = emoji;
-
-    modalText.innerText = message;
-
-    cardModal.classList.add("show");
+    setTimeout(() => {
+        box.style.transform = "scale(1)";
+    }, 200);
 
 }
 
 
-function closeCard() {
+/* =========================
+   QUIZ
+========================= */
 
-    cardModal.classList.remove("show");
+let score = 0;
 
-}
+let answeredQuestions = new Set();
 
+function answer(button, correct) {
 
-/* close popup when clicking outside */
+    const question = button.closest(".question");
 
-cardModal.addEventListener("click", function(e) {
-
-    if (e.target === cardModal) {
-        closeCard();
+    if (question.dataset.answered === "true") {
+        return;
     }
 
-});
+    question.dataset.answered = "true";
 
+    const questionNumber =
+        Array.from(document.querySelectorAll(".question"))
+        .indexOf(question);
 
-/* ---------------- PHOTO POPUP ---------------- */
+    answeredQuestions.add(questionNumber);
 
-const photoModal = document.getElementById("photoModal");
+    const buttons = question.querySelectorAll("button");
 
-const bigPhoto = document.getElementById("bigPhoto");
+    buttons.forEach(btn => {
+        btn.disabled = true;
+    });
 
+    if (correct) {
 
-function openPhoto(image) {
+        button.classList.add("correct");
 
-    bigPhoto.src = image.src;
+        score++;
 
-    photoModal.classList.add("show");
+    } else {
 
-}
+        button.classList.add("wrong");
 
+        buttons.forEach(btn => {
 
-function closePhoto() {
+            if (
+                btn.getAttribute("onclick") &&
+                btn.getAttribute("onclick").includes("true")
+            ) {
+                btn.classList.add("correct");
+            }
 
-    photoModal.classList.remove("show");
-
-}
-
-
-/* ---------------- ESCAPE KEY ---------------- */
-
-document.addEventListener("keydown", function(e) {
-
-    if (e.key === "Escape") {
-
-        closeCard();
-
-        closePhoto();
+        });
 
     }
 
-});
+    updateQuizResult();
+}
 
 
-/* ---------------- FLOATING HEARTS ---------------- */
+function updateQuizResult() {
+
+    const result = document.getElementById("quizResult");
+
+    const total = 4;
+
+    if (answeredQuestions.size < total) {
+
+        result.innerHTML =
+            `You've answered ${answeredQuestions.size}/${total} 💗<br>
+             Keep going, Maryam 👀`;
+
+        return;
+    }
+
+    if (score === 4) {
+
+        result.innerHTML =
+            `🎉 ${score}/${total}!<br>
+             OKAYYY you actually know me. 😭💗`;
+
+    } else if (score >= 2) {
+
+        result.innerHTML =
+            `😂 ${score}/${total}!<br>
+             Not bad... but we clearly need more friendship training. 💗`;
+
+    } else {
+
+        result.innerHTML =
+            `😭 ${score}/${total}!<br>
+             MARYAMMMMM... we need to talk. 😂`;
+    }
+}
+
+
+/* =========================
+   RESET QUIZ
+========================= */
+
+function resetQuiz() {
+
+    score = 0;
+
+    answeredQuestions.clear();
+
+    document.querySelectorAll(".question").forEach(question => {
+
+        question.dataset.answered = "false";
+
+        question.querySelectorAll("button").forEach(button => {
+
+            button.disabled = false;
+
+            button.classList.remove("correct", "wrong");
+
+        });
+
+    });
+
+    document.getElementById("quizResult").innerHTML =
+        "Your score will appear here 💗";
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 function createHeart() {
 
-    const heart = document.createElement("div");
+    const container =
+        document.querySelector(".floating-hearts");
 
-    heart.innerHTML = ["♡", "♥", "💗", "💕"][Math.floor(Math.random() * 4)];
+    const heart =
+        document.createElement("div");
 
-    heart.style.position = "fixed";
+    heart.className = "heart";
 
-    heart.style.left = Math.random() * 100 + "vw";
+    const hearts = [
+        "💗",
+        "💕",
+        "♡",
+        "♥",
+        "🌸",
+        "✨"
+    ];
 
-    heart.style.bottom = "-30px";
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
 
-    heart.style.fontSize = (12 + Math.random() * 15) + "px";
+    heart.style.left =
+        Math.random() * 100 + "%";
 
-    heart.style.color = "#e889aa";
+    heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
 
-    heart.style.pointerEvents = "none";
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
 
-    heart.style.zIndex = "1";
-
-    heart.style.opacity = ".65";
-
-    heart.style.transition = "transform 5s linear, opacity 5s linear";
-
-    document.body.appendChild(heart);
-
-
-    setTimeout(() => {
-
-        heart.style.transform =
-            `translateY(-${window.innerHeight + 100}px) rotate(360deg)`;
-
-        heart.style.opacity = "0";
-
-    }, 50);
-
+    container.appendChild(heart);
 
     setTimeout(() => {
-
         heart.remove();
+    }, 12000);
+}
 
-    }, 5100);
+
+setInterval(createHeart, 900);
+
+
+/* =========================
+   POPUP
+========================= */
+
+function showPopup(text) {
+
+    document.getElementById("popupText").innerHTML = text;
+
+    document.getElementById("popup")
+        .classList.add("show");
 
 }
 
 
-setInterval(createHeart, 1200);
+function closePopup() {
+
+    document.getElementById("popup")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+   FINAL SURPRISE
+========================= */
+
+function makeItRain() {
+
+    const messages = [
+        "YOU ARE STUCK WITH ME 😂💗",
+        "Friendship contract: PERMANENT. 🫶🏻",
+        "Too late to escape now. 😭",
+        "Maryam + Fatima = chaos forever. 😂",
+        "Thank you for existing. 🤍"
+    ];
+
+    let message =
+        messages[Math.floor(Math.random() * messages.length)];
+
+    showPopup(message);
+
+    for (let i = 0; i < 40; i++) {
+
+        setTimeout(() => {
+            createHeart();
+        }, i * 60);
+
+    }
+
+}
+
+
+/* =========================
+   CLOSE POPUP BY CLICKING OUTSIDE
+========================= */
+
+document.getElementById("popup")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closePopup();
+        }
+
+    });

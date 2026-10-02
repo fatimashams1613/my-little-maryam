@@ -4,148 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For My Favorite Human ♡</title>
+    <title>My Little Maryam 💗</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- FLOATING STICKERS -->
-    <div class="sticker s1">💗</div>
-    <div class="sticker s2">🎀</div>
-    <div class="sticker s3">🧸</div>
-    <div class="sticker s4">🌷</div>
-    <div class="sticker s5">✨</div>
-    <div class="sticker s6">💌</div>
+    <!-- Floating hearts -->
+    <div class="floating-hearts"></div>
 
     <!-- MUSIC -->
-    <audio id="music" loop>
+    <audio id="song" loop>
         <source src="music/song.mp3" type="audio/mpeg">
+        Your browser does not support audio.
     </audio>
 
-    <button class="music-btn" id="musicBtn">
-        🎵 <span>play our song</span>
+    <button id="musicBtn" class="music-button">
+        🎵 Play Our Song
     </button>
+
 
     <!-- HERO -->
     <section class="hero">
 
-        <div class="tiny">a little website for my favorite person ♡</div>
+        <div class="sparkle">✦</div>
+
+        <p class="small-title">A little corner of the internet...</p>
 
         <h1>
-            hey,<br>
-            <span>bestie.</span>
+            My Little <span>Maryam</span> 💗
         </h1>
 
         <p class="hero-text">
-            I made you a tiny corner of the internet
-            because apparently a normal message wasn't enough. 🎀
+            Made with too much love, too many memories,
+            and absolutely no normal behavior. 😂
         </p>
 
-        <button class="start-btn" onclick="scrollToMemories()">
-            come here, idiot ♡
+        <button class="main-button" onclick="scrollToSection('letter')">
+            Open Your Surprise 💌
         </button>
 
-        <div class="scroll">↓ scroll slowly ↓</div>
+        <div class="scroll">
+            ↓ keep scrolling ↓
+        </div>
 
     </section>
 
 
-    <!-- LITTLE MESSAGE -->
-    <section class="letter-section">
+    <!-- INTRO -->
+    <section class="section" id="letter">
+
+        <div class="section-title">
+            <span>💌</span>
+            <h2>For My Little Maryam</h2>
+            <span>💌</span>
+        </div>
 
         <div class="letter-card">
 
-            <div class="tape"></div>
-
-            <p class="small-title">a tiny confession</p>
-
-            <h2>
-                life is just a little<br>
-                <i>better</i> with you.
-            </h2>
-
             <p>
-                You're one of those people who somehow turned
-                ordinary days into memories I actually want to keep.
+                Dear Maryam,
             </p>
 
-            <div class="signature">
-                forever annoying you,<br>
-                <span>♡ me</span>
-            </div>
+            <p>
+                I don't really know how to fit everything I feel about
+                our friendship into a website, because honestly...
+                how do you summarize a person who has become such a
+                beautiful part of your life?
+            </p>
+
+            <p>
+                You came into my life and somehow ordinary days became
+                memories. Random conversations became things I remember.
+                Laughing over absolutely stupid things became some of my
+                favorite moments.
+            </p>
+
+            <p>
+                And somewhere between all the jokes, nonsense,
+                conversations and memories, you became one of those people
+                I genuinely don't want to lose.
+            </p>
+
+            <p class="signature">
+                With lots and lots of love,<br>
+                <strong>Fatima 🤍</strong>
+            </p>
 
         </div>
 
     </section>
 
 
-    <!-- INTERACTIVE CARDS -->
-    <section class="reasons" id="memories">
+    <!-- OUR STORY -->
+    <section class="section pink-section">
 
-        <p class="section-mini">things i secretly love about us</p>
+        <div class="section-title">
+            <span>🌷</span>
+            <h2>Our Little Story</h2>
+            <span>🌷</span>
+        </div>
 
-        <h2 class="section-title">
-            our little <span>world</span>
-        </h2>
+        <div class="story-grid">
 
-        <div class="cards">
-
-            <div class="reason-card" onclick="openCard(this)">
-                <span class="number">01</span>
-                <div class="emoji">🧸</div>
-                <h3>the comfort</h3>
-                <p>Tap me ♡</p>
-
-                <div class="hidden-message">
-                    Somehow I can be completely myself around you.
-                    Even my weirdest version. Unfortunately, you've seen everything. 😭
-                </div>
+            <div class="story-card">
+                <div class="emoji">🌸</div>
+                <h3>It Started Somehow</h3>
+                <p>
+                    I don't even know at which exact moment you stopped
+                    being just someone I knew and became MY person.
+                </p>
             </div>
 
-
-            <div class="reason-card" onclick="openCard(this)">
-                <span class="number">02</span>
+            <div class="story-card">
                 <div class="emoji">😂</div>
-                <h3>the laughs</h3>
-                <p>Tap me ♡</p>
-
-                <div class="hidden-message">
-                    Half of our conversations make absolutely no sense.
-                    And honestly? I wouldn't change that.
-                </div>
+                <h3>Then Came The Nonsense</h3>
+                <p>
+                    Our friendship contains approximately 10% serious
+                    conversations and 90% absolute nonsense.
+                </p>
             </div>
 
-
-            <div class="reason-card" onclick="openCard(this)">
-                <span class="number">03</span>
-                <div class="emoji">🎀</div>
-                <h3>the chaos</h3>
-                <p>Tap me ♡</p>
-
-                <div class="hidden-message">
-                    Somehow every random moment becomes a story.
-                    We're actually a little ridiculous. 🤏🏻
-                </div>
-            </div>
-
-
-            <div class="reason-card" onclick="openCard(this)">
-                <span class="number">04</span>
-                <div class="emoji">💌</div>
-                <h3>the memories</h3>
-                <p>Tap me ♡</p>
-
-                <div class="hidden-message">
-                    There are so many tiny moments that I never want
-                    to forget. This website is basically proof. 🥹
-                </div>
+            <div class="story-card">
+                <div class="emoji">🫶🏻</div>
+                <h3>And Then...</h3>
+                <p>
+                    Somehow all those tiny moments became memories
+                    that I never want to forget.
+                </p>
             </div>
 
         </div>
@@ -153,81 +145,302 @@
     </section>
 
 
-    <!-- PHOTO SECTION -->
-    <section class="photos-section">
+    <!-- FUNNY SECTION -->
+    <section class="section">
 
-        <p class="section-mini">evidence that we are actually cute</p>
+        <div class="section-title">
+            <span>😂</span>
+            <h2>Official Friendship Statistics</h2>
+            <span>😂</span>
+        </div>
 
-        <h2 class="section-title">
-            12 little <span>memories</span>
-        </h2>
+        <div class="stats-grid">
 
-        <p class="photo-subtitle">
-            Tap any picture. Yes, even the embarrassing ones. 😭
+            <div class="stat-card">
+                <span>😂</span>
+                <strong>87%</strong>
+                <p>Random nonsense</p>
+            </div>
+
+            <div class="stat-card">
+                <span>💬</span>
+                <strong>92%</strong>
+                <p>Unnecessary conversations</p>
+            </div>
+
+            <div class="stat-card">
+                <span>😭</span>
+                <strong>100%</strong>
+                <p>Emotional attachment</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🫠</span>
+                <strong>∞</strong>
+                <p>Inside jokes</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+    <section class="section pink-section">
+
+        <div class="section-title">
+            <span>📸</span>
+            <h2>Our Little Memories</h2>
+            <span>📸</span>
+        </div>
+
+        <p class="center-text">
+            12 pictures. 12 little pieces of our story. 🤍
         </p>
 
-
-        <div class="photo-grid">
+        <div class="gallery">
 
             <div class="photo-card">
-                <img src="images/photo1.jpeg" alt="Memory 1" onclick="openPhoto(this)">
-                <div class="caption">one of my favourites ♡</div>
+                <img src="images/photo1.jpeg" alt="Memory 1">
+                <p>Memory #01 🌸</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo2.jpeg" alt="Memory 2" onclick="openPhoto(this)">
-                <div class="caption">look at us 😭</div>
+                <img src="images/photo2.jpeg" alt="Memory 2">
+                <p>Memory #02 💗</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo3.jpeg" alt="Memory 3" onclick="openPhoto(this)">
-                <div class="caption">little moment 🌷</div>
+                <img src="images/photo3.jpeg" alt="Memory 3">
+                <p>Memory #03 🫶🏻</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo4.jpeg" alt="Memory 4" onclick="openPhoto(this)">
-                <div class="caption">♡ forever saving this</div>
+                <img src="images/photo4.jpeg" alt="Memory 4">
+                <p>Memory #04 🌷</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo5.jpeg" alt="Memory 5" onclick="openPhoto(this)">
-                <div class="caption">the memories >>>></div>
+                <img src="images/photo5.jpeg" alt="Memory 5">
+                <p>Memory #05 😂</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo6.jpeg" alt="Memory 6" onclick="openPhoto(this)">
-                <div class="caption">just us being us</div>
+                <img src="images/photo6.jpeg" alt="Memory 6">
+                <p>Memory #06 💕</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo7.jpeg" alt="Memory 7" onclick="openPhoto(this)">
-                <div class="caption">this one ♡</div>
+                <img src="images/photo7.jpeg" alt="Memory 7">
+                <p>Memory #07 🌸</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo8.jpeg" alt="Memory 8" onclick="openPhoto(this)">
-                <div class="caption">so many memories</div>
+                <img src="images/photo8.jpeg" alt="Memory 8">
+                <p>Memory #08 🥹</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo9.jpeg" alt="Memory 9" onclick="openPhoto(this)">
-                <div class="caption">another little moment ♡</div>
+                <img src="images/photo9.jpeg" alt="Memory 9">
+                <p>Memory #09 💗</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo10.jpeg" alt="Memory 10" onclick="openPhoto(this)">
-                <div class="caption">keeping this forever</div>
+                <img src="images/photo10.jpeg" alt="Memory 10">
+                <p>Memory #10 🌼</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo11.jpeg" alt="Memory 11" onclick="openPhoto(this)">
-                <div class="caption">my favourite idiot 🎀</div>
+                <img src="images/photo11.jpeg" alt="Memory 11">
+                <p>Memory #11 🫶🏻</p>
             </div>
 
             <div class="photo-card">
-                <img src="images/photo12.jpeg" alt="Memory 12" onclick="openPhoto(this)">
-                <div class="caption">one more for the collection ♡</div>
+                <img src="images/photo12.jpeg" alt="Memory 12">
+                <p>Memory #12 🤍</p>
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- THINGS I LOVE -->
+    <section class="section">
+
+        <div class="section-title">
+            <span>💗</span>
+            <h2>Things I Love About You</h2>
+            <span>💗</span>
+        </div>
+
+        <div class="love-list">
+
+            <button onclick="showMessage('Your presence makes ordinary days feel special. 🌸')">
+                🌸 Your presence
+            </button>
+
+            <button onclick="showMessage('The way you can make me laugh over the dumbest things. 😂')">
+                😂 Your nonsense
+            </button>
+
+            <button onclick="showMessage('The little things you probably don't even realize I notice. 🥹')">
+                🥹 Your little things
+            </button>
+
+            <button onclick="showMessage('The memories we have collected together. 📸')">
+                📸 Our memories
+            </button>
+
+            <button onclick="showMessage('Simply... you being you. 🤍')">
+                🤍 Just YOU
+            </button>
+
+        </div>
+
+        <div id="messageBox" class="message-box">
+            Click one 💗
+        </div>
+
+    </section>
+
+
+    <!-- EMOTIONAL -->
+    <section class="section emotional-section">
+
+        <div class="cloud">☁️</div>
+
+        <h2>
+            If I Could Tell You One Thing...
+        </h2>
+
+        <div class="emotional-card">
+
+            <p>
+                I hope you always remember that your existence matters.
+            </p>
+
+            <p>
+                There will be days when life gets busy, people change,
+                circumstances become complicated and everything feels
+                different.
+            </p>
+
+            <p>
+                But I hope that somewhere in the middle of all of that,
+                you remember that there was once a girl named Fatima
+                who was incredibly grateful that a girl named Maryam
+                existed in her life.
+            </p>
+
+            <p>
+                Some friendships aren't loud.
+                They simply become a quiet little home in your heart.
+            </p>
+
+            <p class="big-line">
+                And you are one of those homes for me. 🤍
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section class="section pink-section" id="quiz">
+
+        <div class="section-title">
+            <span>🧠</span>
+            <h2>How Well Do You Know Me?</h2>
+            <span>🧠</span>
+        </div>
+
+        <p class="center-text">
+            Okay Maryam... let's see if you actually know me. 👀
+        </p>
+
+        <div class="quiz-card">
+
+            <!-- QUESTION 1 -->
+            <div class="question">
+                <h3>1. What do I love doing the most?</h3>
+
+                <button onclick="answer(this, false)">
+                    Sleeping 😴
+                </button>
+
+                <button onclick="answer(this, true)">
+                    Learning & creating things 💗
+                </button>
+
+                <button onclick="answer(this, false)">
+                    Eating all day 🍕
+                </button>
+            </div>
+
+
+            <!-- QUESTION 2 -->
+            <div class="question">
+                <h3>2. Which one sounds most like me?</h3>
+
+                <button onclick="answer(this, false)">
+                    Completely serious 24/7 😐
+                </button>
+
+                <button onclick="answer(this, true)">
+                    Emotional + chaotic 😂
+                </button>
+
+                <button onclick="answer(this, false)">
+                    Never overthinks anything 😌
+                </button>
+            </div>
+
+
+            <!-- QUESTION 3 -->
+            <div class="question">
+                <h3>3. What kind of memories do I value?</h3>
+
+                <button onclick="answer(this, true)">
+                    Tiny meaningful moments 🥹
+                </button>
+
+                <button onclick="answer(this, false)">
+                    Only expensive things 💰
+                </button>
+
+                <button onclick="answer(this, false)">
+                    Nothing 😂
+                </button>
+            </div>
+
+
+            <!-- QUESTION 4 -->
+            <div class="question">
+                <h3>4. What is our friendship officially powered by?</h3>
+
+                <button onclick="answer(this, false)">
+                    Logic
+                </button>
+
+                <button onclick="answer(this, true)">
+                    Love + nonsense 😂💗
+                </button>
+
+                <button onclick="answer(this, false)">
+                    Professional behavior
+                </button>
+            </div>
+
+
+            <div id="quizResult" class="quiz-result">
+                Your score will appear here 💗
+            </div>
+
+            <button class="reset-button" onclick="resetQuiz()">
+                Try Again 🔄
+            </button>
 
         </div>
 
@@ -237,59 +450,55 @@
     <!-- FINAL MESSAGE -->
     <section class="final-section">
 
-        <div class="heart">♡</div>
-
-        <p class="section-mini">and finally...</p>
-
-        <h2>
-            you're stuck<br>
-            <span>with me.</span>
-        </h2>
-
-        <p class="final-text">
-            No matter how much we annoy each other,
-            laugh at stupid things, disappear for hours,
-            or randomly start talking nonsense...
-            I'm really glad it's you. 💗
-        </p>
-
-        <div class="final-sticker">
-            🧸 🎀 💌
+        <div class="final-hearts">
+            ♡ ♥ ♡ ♥ ♡
         </div>
 
-        <p class="tiny-final">
-            made with way too much love ♡
+        <h2>
+            Hey Maryam...
+        </h2>
+
+        <p>
+            If you reached this far,
+            congratulations. 😂
+        </p>
+
+        <p>
+            You have officially survived
+            the entire Fatima Friendship Website™.
+        </p>
+
+        <p class="final-big">
+            I love you, little Maryam. 🤍
+        </p>
+
+        <p>
+            Thank you for being part of my story.
+        </p>
+
+        <button class="main-button" onclick="makeItRain()">
+            One Last Surprise ✨
+        </button>
+
+        <p class="footer-note">
+            Made with love by Fatima 🌸
         </p>
 
     </section>
 
 
-    <!-- CARD POPUP -->
-    <div class="modal" id="cardModal">
+    <!-- POPUP -->
+    <div id="popup" class="popup">
 
-        <div class="modal-box">
+        <div class="popup-content">
 
-            <button class="close" onclick="closeCard()">×</button>
+            <button class="close-popup" onclick="closePopup()">
+                ×
+            </button>
 
-            <div id="modalEmoji"></div>
-
-            <h2 id="modalTitle"></h2>
-
-            <p id="modalText"></p>
-
-            <div class="modal-heart">♡</div>
+            <div id="popupText"></div>
 
         </div>
-
-    </div>
-
-
-    <!-- PHOTO POPUP -->
-    <div class="photo-modal" id="photoModal" onclick="closePhoto()">
-
-        <button class="photo-close">×</button>
-
-        <img id="bigPhoto" src="" alt="">
 
     </div>
 
